@@ -21,7 +21,6 @@ public class DyedFlames implements ModConstructor {
     }
 
     private static void registerEventHandlers() {
-        EntityTickEvents.START.register(EntityInsideFireHandler::onStartEntityTick);
         EntityTickEvents.END.register(EntityInsideFireHandler::onEndEntityTick);
     }
 

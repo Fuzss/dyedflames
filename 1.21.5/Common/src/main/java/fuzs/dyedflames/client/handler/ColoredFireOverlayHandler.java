@@ -27,12 +27,13 @@ public class ColoredFireOverlayHandler {
 
     public static void onExtractRenderState(Entity entity, EntityRenderState renderState, float partialTick) {
         Block block = ModRegistry.LAST_FIRE_SOURCE_ATTACHMENT_TYPE.getOrDefault(entity, Blocks.FIRE);
-        RenderPropertyKey.setRenderProperty(renderState, LAST_FIRE_SOURCE_RENDER_PROPERTY, block);
+        RenderPropertyKey.set(renderState, LAST_FIRE_SOURCE_RENDER_PROPERTY, block);
     }
 
     public static Optional<TextureAtlasSprite> getFireOverlaySprite(EntityRenderState renderState, Function<FireType, ResourceLocation> textureGetter) {
-        return getFireOverlaySprite(RenderPropertyKey.getRenderProperty(renderState, LAST_FIRE_SOURCE_RENDER_PROPERTY),
-                textureGetter);
+        return getFireOverlaySprite(RenderPropertyKey.getOrDefault(renderState,
+                LAST_FIRE_SOURCE_RENDER_PROPERTY,
+                Blocks.AIR), textureGetter);
     }
 
     public static Optional<TextureAtlasSprite> getFireOverlaySprite(@Nullable Entity entity, Function<FireType, ResourceLocation> textureGetter) {

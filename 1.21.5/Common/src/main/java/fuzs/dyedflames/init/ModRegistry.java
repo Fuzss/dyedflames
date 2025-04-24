@@ -7,7 +7,7 @@ import fuzs.neoforgedatapackextensions.api.v1.DataMapToken;
 import fuzs.puzzleslib.api.attachment.v4.DataAttachmentRegistry;
 import fuzs.puzzleslib.api.attachment.v4.DataAttachmentType;
 import fuzs.puzzleslib.api.init.v3.registry.RegistryManager;
-import fuzs.puzzleslib.api.network.v3.PlayerSet;
+import fuzs.puzzleslib.api.network.v4.PlayerSet;
 import net.minecraft.core.Holder;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -32,8 +32,8 @@ public class ModRegistry {
             .persistent(BuiltInRegistries.BLOCK.byNameCodec())
             .networkSynchronized(ByteBufCodecs.registry(Registries.BLOCK), PlayerSet::nearEntity)
             .build(DyedFlames.id("last_fire_source"));
-    public static final DataAttachmentType<Entity, Boolean> WAS_PLAYER_ON_FIRE_ATTACHMENT_TYPE = DataAttachmentRegistry.<Boolean>entityBuilder()
-            .build(DyedFlames.id("was_player_on_fire"));
+    public static final DataAttachmentType<Entity, Boolean> WAS_ON_FIRE_ATTACHMENT_TYPE = DataAttachmentRegistry.<Boolean>entityBuilder()
+            .build(DyedFlames.id("was_on_fire"));
 
     public static void bootstrap() {
         // NO-OP
