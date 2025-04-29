@@ -5,9 +5,8 @@ import fuzs.dyedflames.client.handler.ColoredFireOverlayHandler;
 import fuzs.dyedflames.world.level.block.FireType;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderDispatcher;
-import net.minecraft.client.renderer.entity.state.EntityRenderState;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
-import org.joml.Quaternionf;
+import net.minecraft.world.entity.Entity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
@@ -16,12 +15,12 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 abstract class EntityRenderDispatcherMixin {
 
     @ModifyVariable(method = "renderFlame", at = @At("STORE"), ordinal = 0)
-    private TextureAtlasSprite renderFlame$0(TextureAtlasSprite sprite, PoseStack poseStack, MultiBufferSource bufferSource, EntityRenderState renderState, Quaternionf quaternion) {
-        return ColoredFireOverlayHandler.getFireOverlaySprite(renderState, FireType::texture0).orElse(sprite);
+    private TextureAtlasSprite renderFlame$0(TextureAtlasSprite sprite, PoseStack poseStack, MultiBufferSource bufferSource, Entity entity) {
+        return ColoredFireOverlayHandler.getFireOverlaySprite(entity, FireType::texture0).orElse(sprite);
     }
 
     @ModifyVariable(method = "renderFlame", at = @At("STORE"), ordinal = 1)
-    private TextureAtlasSprite renderFlame$1(TextureAtlasSprite sprite, PoseStack poseStack, MultiBufferSource bufferSource, EntityRenderState renderState, Quaternionf quaternion) {
-        return ColoredFireOverlayHandler.getFireOverlaySprite(renderState, FireType::texture1).orElse(sprite);
+    private TextureAtlasSprite renderFlame$1(TextureAtlasSprite sprite, PoseStack poseStack, MultiBufferSource bufferSource, Entity entity) {
+        return ColoredFireOverlayHandler.getFireOverlaySprite(entity, FireType::texture1).orElse(sprite);
     }
 }

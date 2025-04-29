@@ -8,9 +8,7 @@ import fuzs.puzzleslib.api.data.v2.core.DataProviderContext;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.TagKey;
@@ -33,7 +31,7 @@ public class ModDataMapProvider extends DataMapProvider {
     }
 
     @Override
-    protected void gather(HolderLookup.Provider registries) {
+    protected void gather() {
         Builder<FireType, Block> builder = this.builder(NeoForgeDataMapToken.unwrap(ModRegistry.FIRE_TYPES_DATA_MAP_TYPE));
         register(builder,
                 Blocks.FIRE,
@@ -51,12 +49,6 @@ public class ModDataMapProvider extends DataMapProvider {
                 ResourceLocationHelper.withDefaultNamespace("block/soul_fire_0"),
                 ResourceLocationHelper.withDefaultNamespace("block/soul_fire_1"),
                 ModRegistry.SOUL_LAVA_PARTICLE_TYPE.value());
-        builder.add(ResourceKey.create(Registries.BLOCK, ResourceLocationHelper.parse("illagerinvasion:magic_fire")),
-                new FireType(Optional.empty(),
-                        ResourceLocationHelper.parse("illagerinvasion:block/magic_fire_0"),
-                        ResourceLocationHelper.parse("illagerinvasion:block/magic_fire_1"),
-                        Optional.empty()),
-                false);
     }
 
     static void register(Builder<FireType, Block> builder, Block block, ResourceLocation texture0, ResourceLocation texture1, SimpleParticleType particleType) {

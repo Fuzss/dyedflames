@@ -1,9 +1,5 @@
 {
   "values": {
-    "illagerinvasion:magic_fire": {
-      "texture0": "illagerinvasion:block/magic_fire_0",
-      "texture1": "illagerinvasion:block/magic_fire_1"
-    },
     "minecraft:fire": {
       "particle": "minecraft:lava",
       "texture0": "minecraft:block/fire_0",
