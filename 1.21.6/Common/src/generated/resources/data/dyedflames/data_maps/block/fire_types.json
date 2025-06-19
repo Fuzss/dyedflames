@@ -1,0 +1,20 @@
+{
+  "values": {
+    "minecraft:fire": {
+      "particle": "minecraft:lava",
+      "texture0": "minecraft:block/fire_0",
+      "texture1": "minecraft:block/fire_1"
+    },
+    "minecraft:lava": {
+      "fluid": "minecraft:lava",
+      "particle": "minecraft:lava",
+      "texture0": "minecraft:block/fire_0",
+      "texture1": "minecraft:block/fire_1"
+    },
+    "minecraft:soul_fire": {
+      "particle": "dyedflames:soul_lava",
+      "texture0": "minecraft:block/soul_fire_0",
+      "texture1": "minecraft:block/soul_fire_1"
+    }
+  }
+}
