@@ -31,7 +31,7 @@ public class EntityInsideFireHandler {
             ModRegistry.WAS_ON_FIRE_ATTACHMENT_TYPE.set(entity, entity.isOnFire());
             if (entity.isOnFire()) {
                 copyLastFireSourceFromAttacker(entity);
-            } else if (!entity.level().isClientSide) {
+            } else if (!entity.level().isClientSide()) {
                 ModRegistry.LAST_FIRE_SOURCE_ATTACHMENT_TYPE.set(entity, null);
             }
         }

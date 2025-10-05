@@ -7,7 +7,7 @@
     "EntityMixin"
   ],
   "client": [
-    "client.EntityRenderDispatcherMixin",
+    "client.FlameFeatureRendererMixin",
     "client.ScreenEffectRendererMixin"
   ],
   "injectors": {
