@@ -1,0 +1,69 @@
+{
+    "mod": {
+        "id": "dyedflames",
+        "group": "fuzs.dyedflames",
+        "name": "Dyed Flames",
+        "version": "21.11.0",
+        "authors": [
+            "Fuzs"
+        ],
+        "description": "Bring your burns to life with colorful, source-matching flames and flashy fire effects.",
+        "license": "MPL-2.0"
+    },
+    "dependencies": [
+        {
+            "name": "neoforgedatapackextensions",
+            "type": "embedded",
+            "platforms": [
+                "fabric",
+                "neoforge"
+            ]
+        },
+        {
+            "name": "fabricapi",
+            "type": "required",
+            "platforms": [
+                "fabric"
+            ]
+        },
+        {
+            "name": "forgeconfigapiport",
+            "type": "required",
+            "platforms": [
+                "fabric"
+            ]
+        },
+        {
+            "name": "puzzleslib",
+            "type": "required",
+            "platforms": [
+                "fabric",
+                "neoforge"
+            ]
+        }
+    ],
+    "links": [
+        {
+            "name": "github",
+            "slug": "dyedflames"
+        },
+        {
+            "name": "curseforge",
+            "slug": "dyed-flames",
+            "id": "1254590"
+        },
+        {
+            "name": "modrinth",
+            "slug": "dyed-flames",
+            "id": "66H5fc9R"
+        }
+    ],
+    "environments": {
+        "client": "required",
+        "server": "required"
+    },
+    "platforms": [
+        "fabric",
+        "neoforge"
+    ]
+}
