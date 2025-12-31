@@ -1,3 +1,4 @@
 accessWidener   v2  named
 accessible  field   net/minecraft/world/damagesource/CombatTracker  entries Ljava/util/List;
 accessible  method  net/minecraft/world/entity/Entity   isAffectedByBlocks  ()Z
+accessible  method  net/minecraft/client/renderer/ScreenEffectRenderer  renderFire  (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/renderer/texture/TextureAtlasSprite;)V

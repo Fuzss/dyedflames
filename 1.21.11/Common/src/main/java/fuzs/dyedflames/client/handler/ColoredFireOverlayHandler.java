@@ -1,18 +1,25 @@
 package fuzs.dyedflames.client.handler;
 
+import com.mojang.blaze3d.vertex.PoseStack;
 import fuzs.dyedflames.DyedFlames;
 import fuzs.dyedflames.init.ModRegistry;
 import fuzs.dyedflames.world.level.block.FireType;
 import fuzs.puzzleslib.api.client.renderer.v1.RenderStateExtraData;
-import net.minecraft.util.Util;
+import fuzs.puzzleslib.api.event.v1.core.EventResult;
+import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.ScreenEffectRenderer;
 import net.minecraft.client.renderer.entity.state.EntityRenderState;
 import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.client.resources.model.Material;
+import net.minecraft.client.resources.model.MaterialSet;
 import net.minecraft.resources.Identifier;
+import net.minecraft.util.Util;
 import net.minecraft.util.context.ContextKey;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import org.jspecify.annotations.Nullable;
 
 import java.util.Optional;
@@ -48,5 +55,13 @@ public class ColoredFireOverlayHandler {
     private static Optional<Material> getFireOverlaySprite(Block block, Function<FireType, Identifier> textureGetter) {
         return FireType.getFireType(block)
                 .map((FireType fireType) -> FIRE_MATERIALS.apply(textureGetter.apply(fireType)));
+    }
+
+    public static EventResult onRenderBlockOverlay(LocalPlayer player, PoseStack poseStack, MultiBufferSource bufferSource, BlockState blockState, MaterialSet materialSet) {
+        return blockState.is(Blocks.FIRE) ?
+                ColoredFireOverlayHandler.getFireOverlaySprite(player, FireType::texture1).map((Material material) -> {
+                    ScreenEffectRenderer.renderFire(poseStack, bufferSource, materialSet.get(material));
+                    return EventResult.INTERRUPT;
+                }).orElse(EventResult.PASS) : EventResult.PASS;
     }
 }
