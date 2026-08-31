@@ -1,8 +1,15 @@
 {
   "branches": {
-    "1.21.11": "archived",
     "1.21.1": "maintained",
+    "1.21.11": "archived",
     "26.1.x": "maintained",
     "26.2.x": "primary"
+  },
+  "properties": {
+    "distributions.curseforge.id": "1254590",
+    "distributions.curseforge.slug": "dyed-flames",
+    "distributions.github.slug": "dyed-flames",
+    "distributions.modrinth.id": "66H5fc9R",
+    "distributions.modrinth.slug": "dyed-flames"
   }
 }
