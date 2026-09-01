@@ -5,11 +5,17 @@
     "26.1.x": "maintained",
     "26.2.x": "primary"
   },
-  "properties": {
-    "distributions.curseforge.id": "1254590",
-    "distributions.curseforge.slug": "dyed-flames",
-    "distributions.github.slug": "dyed-flames",
-    "distributions.modrinth.id": "66H5fc9R",
-    "distributions.modrinth.slug": "dyed-flames"
+  "distributions": {
+    "curseforge": {
+      "id": "1254590",
+      "slug": "dyed-flames"
+    },
+    "github": {
+      "slug": "dyed-flames"
+    },
+    "modrinth": {
+      "id": "66H5fc9R",
+      "slug": "dyed-flames"
+    }
   }
 }
